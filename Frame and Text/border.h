@@ -7,11 +7,10 @@ private:
     double left,right,top,down;
     int color;
 public:
-    Border(double height, double width);
-
+    Border(double height=297, double width=210);
+    void Setcolor();
     void clear();//Reset all value to defalut one
 
 
 };
-
 #endif // BORDER_H

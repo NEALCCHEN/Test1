@@ -18,12 +18,12 @@ class Frame{
         double width,height;
     //When change the border, need to update the width and height at the same time
     public:
-        Frame(double height,double width,bool LtoR,bool horizontal);
+        Frame(double height=297,double width=210,bool LtoR=1,bool horizontal=1);
 
 
         void clear();//Reset all information to defalut value
-        void insert(std::string s, CharacterStyle cs, bool withLink);//insert a string with a link or not
-        void insert(char c,   CharacterStyle cs);//insert a character with certain style
+        void insert(std::string & s, CharacterStyle cs, bool withLink);//insert a string with a link or not
+        void insert(char & c,   CharacterStyle cs);//insert a character with certain style
         void insertSpace(); // insert a space
         void insertReturn();// insert return
 };

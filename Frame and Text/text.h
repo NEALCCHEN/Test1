@@ -19,8 +19,8 @@ public:
     Text();
 
 
-    void insert(std::string , CharacterStyle);//insert a string
-    void insert(char c, CharacterStyle);//inset a character
+    void insert(char *s);//insert a string
+    void insert(char &c);//inset a character
     void insertSpace(); // insert a space
     void insertReturn();//insert return
     void deleteLine(int i);//Delete line at index i

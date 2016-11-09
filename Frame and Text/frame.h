@@ -5,6 +5,7 @@
 #include "characterstyle.h"
 #include <string>
 #include <list>
+#include <qframe>
 
 
 class Frame{
@@ -22,8 +23,9 @@ class Frame{
 
 
         void clear();//Reset all information to defalut value
-        void insert(std::string & s, CharacterStyle cs, bool withLink);//insert a string with a link or not
-        void insert(char & c,   CharacterStyle cs);//insert a character with certain style
+        void insert(char *s,bool withLink);//insert a string with a link or not
+        void insert(char *s);//insert a string with a link or not
+        void insert(char & c);//insert a character with certain style
         void insertSpace(); // insert a space
         void insertReturn();// insert return
 };

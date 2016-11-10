@@ -16,7 +16,7 @@ public:
     ~MainWindow();
 
 
-
+    void addFrame();
 private slots:
     void on_actionFont_triggered();
 

@@ -13,15 +13,15 @@ TEMPLATE = app
 SOURCES += main.cpp \
     frame.cpp \
     page.cpp \
-    characterstyle.cpp \
     border.cpp \
     textline.cpp \
-    text.cpp
+    text.cpp \
+    myfont.cpp
 
 HEADERS += \
     text.h \
     frame.h \
     textline.h \
     border.h \
-    characterstyle.h \
-    page.h
+    page.h \
+    myfont.h

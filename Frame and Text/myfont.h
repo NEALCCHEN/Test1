@@ -1,11 +1,11 @@
-#ifndef CHARACTERSTYLE_H__
-#define CHARACTERSTYLE_H__
+#ifndef MYFONT_H
+#define MYFONT_H
+
+
 #include <string>
-#include <QFontInfo>
-#include <QFont>
 
 
-class CharacterStyle: public QFont{
+class myFont{
 //This class represent a single character and it has its own different style
 private:
     std::string language;
@@ -16,8 +16,9 @@ private:
     bool italic;
     bool underline;
 public:
-    CharacterStyle();
+    myFont();
 
 };
 
-#endif // CHARACTERSTYLE_H
+
+#endif // MYFONT_H

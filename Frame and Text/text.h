@@ -1,8 +1,9 @@
 #ifndef TEXT_H__
 #define TEXT_H__
-#include "characterstyle.h"
+#include "myfont.h"
 #include "textline.h"
 #include <string>
+#include <map>
 #include <list>
 
 class Text{
@@ -12,18 +13,30 @@ class Text{
 */
 
 private:
-    std::list<TextLine> linelist;// A List of line in the text
+    myFont defalutFont;// A List of line in the text
+    std::list<TextLine> textLineList;
     double linespace;
-    double width,height;
 public:
     Text();
 
 
     void insert(char *s);//insert a string
-    void insert(char &c);//inset a character
-    void insertSpace(); // insert a space
+
+    void insert(char c);//inset a character
+
     void insertReturn();//insert return
+
     void deleteLine(int i);//Delete line at index i
+
+    void setLineSpace(double);
+
+    double getLineSpace();
+
+    myFont getDefalutFont();
+
+    void setDefalutFont(myFont&);
+
+    void addTextLine(TextLine &tl);
 
 };
 

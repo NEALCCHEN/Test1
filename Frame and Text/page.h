@@ -1,6 +1,7 @@
 #ifndef PAGE_H__
 #define PAGE_H__
 #include "frame.h"
+#include <list>
 
 class Page{//Maybe a class should be written by other team
 /*This class represents a single page of XDF
@@ -9,18 +10,25 @@ class Page{//Maybe a class should be written by other team
 */
 private:
     int pageNumber;
-    Frame frame;     // maybe more than one frame????
+    std::list<Frame> frameList;
     double height,width;
     bool LtoR;//Left to right or right to left
     bool horizontal;// horizontal or vertical
 public:
-    Page(double height, double width,bool LtoR,bool horizontal,int pageNum);
+    Page(double height, double width, int pageNum);
 
     void clear();//Reset all information to defalut value
     void print();
     void save();
     void import();//Way to import a file  NOT YOUR PROBLEM
-    Frame getFrame();
+    void addNewFrame(double x,double y, double height,double width);
+    void addFrame(Frame& f);
+    std::list<Frame> getFrameList();
+    int getPageNumber();
+    double getHeight();
+    double getWidth ();
+    void setPageNumber(int i);
+
 };
 
 

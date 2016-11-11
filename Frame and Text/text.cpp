@@ -1,38 +1,54 @@
 #include "text.h"
-
+#include "myfont.h"
 Text::Text():linespace(1.0)
-{
-
-}
-
-
-
+{}
 void Text::insert(char *s){
-    if(linelist.empty()){
+    if(textLineList.empty()){
         TextLine newline;
         newline.insert(s);
-        linelist.push_back(newline);
+        textLineList.push_back(newline);
     }
-    else{//TODO: should consider the situation that the last line is not full but after adding new string then it's
-        linelist.back().insert(s);
+    else{//TODO: should consider the situation that line may full
+        textLineList.back().insert(s);
     }
 }//insert a string
-void Text::insert(char& c){
-    if(linelist.empty()||linelist.back().isFull(width)){
+void Text::insert(char c){
+    if(textLineList.empty()){
         TextLine newline;
         newline.insert(c);
-        linelist.push_back(newline);
+        textLineList.push_back(newline);
     }
     else{
-        linelist.back().insert(c);
+        textLineList.back().insert(c);
     }
 }//inset a character
-void Text::insertSpace(){
 
-} // insert a space
 void Text::insertReturn(){
-
+    TextLine newline;
+    textLineList.push_back(newline);
 }//insert return
 void Text::deleteLine(int i){
 
 }//Delete line at index i
+
+
+
+void Text::setLineSpace(double ls){
+    linespace=ls;
+}
+
+double Text::getLineSpace(){
+    return linespace;
+}
+
+myFont Text::getDefalutFont(){
+    return defalutFont;
+}
+
+void Text::setDefalutFont(myFont & myfont){
+    defalutFont=myfont;
+}
+
+void Text::addTextLine(TextLine& tl){
+    textLineList.push_back(tl);
+}

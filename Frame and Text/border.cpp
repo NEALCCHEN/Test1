@@ -1,13 +1,10 @@
 #include "border.h"
 #include<iostream>
 using namespace std;
-Border::Border(double height, double width):left(width/10),right(width/10),top(height/10),down(height/10),color()
+Border::Border(double height, double width):leftEdge(width/10),rightEdge(width/10),topEdge(height/10),downEdge(height/10)
 {}
-void Border::Setcolor(){
-    cout<<"Please determine the color of the frame:"<<endl;
-    int c;
-    cin>>c;
-    color=c;
+void Border::Setcolor(int i){
+    color=i;
 }
 
 void Border::clear(){
